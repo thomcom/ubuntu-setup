@@ -12,7 +12,7 @@ echo "deb http://apt.llvm.org/$release/ llvm-toolchain-$release main
 deb-src http://apt.llvm.org/$release/ llvm-toolchain-$release main
 " | sudo tee /etc/apt/sources.list.d/llvm.list
 
-sudo apt update && sudo apt install -y clangd bear
+sudo apt update && sudo apt install -y clangd-12 bear
 
 # Install vscode
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -39,5 +39,5 @@ export SHELL_SESSION_HISTORY=0
 ' >> ~/.bashrc;
 
 [ ! "$(grep DOTNET_CLI_TELEMETRY_OPTOUT ~/.bashrc)" ] && echo '
-export export DOTNET_CLI_TELEMETRY_OPTOUT=1
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 ' >> ~/.bashrc;
