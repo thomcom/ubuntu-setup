@@ -7,9 +7,7 @@ cd $(dirname "$(realpath "$0")")/../
 
 mkdir -p ~/Pictures && cp images/*.jpeg ~/Pictures/
 
-sudo apt install -y \
-    xfce4-appmenu-plugin \
-    network-manager-openconnect-gnome
+sudo apt install -y network-manager-openconnect-gnome
 
 # Install sierra-gtk-theme and plank
 sudo add-apt-repository -y ppa:ricotz/docky || true
@@ -58,3 +56,6 @@ sudo apt install -y ./GitHubDesktop-linux-2.0.4-linux1.deb
 
 # Restore xfce settings
 tar -xzvf .config.tar.gz -C ~/
+
+# Build and install the xfce4-appmenu-plugin from source
+source ./scripts/build-and-install-xfce4-appmenu.sh
